@@ -2,7 +2,7 @@
 
 ---
 
-Below code declares pointer `ptr` to `const int` type. You can modify the pointer itself but the object it is pointingto cannot be modified:
+Below code declares pointer `ptr` to `const int` type. You can modify the pointer itself but the object it is pointing to cannot be modified:
 ```c
 const int a = 10;
 const int *ptr = &a;
