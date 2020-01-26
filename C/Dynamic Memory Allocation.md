@@ -9,8 +9,9 @@ This functions allocates the memory and returns the pointer to the allocated mem
 int *ptr = (int*) malloc(10 * sizeof(int));
 ```
 The following is true for `malloc`:
-* If the system is not able to allocate the requested memory on heap then malloc returns NULL.
-* If size is zero (`malloc(0)`), then malloc returns either a NULL pointer or a valid pointer which can be passed to free function for successful memory dealocation. The actual value depends on the implementation.
+
+* If the system is not able to allocate the requested memory on heap then malloc returns `NULL`.
+* If size is zero (`malloc(0)`), then malloc returns either a `NULL` pointer or a valid pointer which can be passed to free function for successful memory dealocation. The actual value depends on the implementation.
 * malloc returns a void pointer which need to casted to appropriate type before dereferencing. (The way we typecasted it to `int*` above)
 * Memory returned by malloc is not initialized an holds garbage value
 
