@@ -61,6 +61,9 @@ Write Skew
 
 * https://vladmihalcea.com/a-beginners-guide-to-read-and-write-skew-phenomena/
 
+---
+
+[Good talk](https://www.youtube.com/watch?v=5g9fwYcF3r8) about how the above anomalies should be dealt with in Django and corresponding [slides](http://slides.com/davidseddon/db-concurrency/#/)
 
 
 
