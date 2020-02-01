@@ -11,10 +11,9 @@ A thread “lives inside a process”. All threads of a process share its addres
 
 Now, when a process runs your python code – it runs a python interpreter to execute your code. Your code now is run by a single primary thread. But If there are more than one thread involved into running your code then each thread has to get a lock (GIL) to run the python interpreter started by the process. Thus, only one thread can be in a state of execution at any point in time.
 
-You normally do not need to worry about GIL, unless you write C extensions or CPU-bound multi-threaded code. There are good visualisation article [The Python GIL Visualized](http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html) and youtube talk about GIL by David Beazley:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Obt-vMVdM8s" frameborder="0" allowfullscreen></iframe>
+You normally do not need to worry about GIL, unless you write C extensions or CPU-bound multi-threaded code. There are good visualisation article [The Python GIL Visualized](http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html) and [youtube talk](https://www.youtube.com/watch?v=Obt-vMVdM8s) about GIL by David Beazley.
 
-&NewLine;
+---
 
 CPU-bound operation examples are math related calculations, image processing etc.
 
