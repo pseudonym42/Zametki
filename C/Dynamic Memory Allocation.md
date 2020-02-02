@@ -4,7 +4,7 @@ Functions `malloc`, `calloc`, `realloc` and `free` are used to allocate/dealloca
 
 ## malloc()
 
-This functions allocates the memory and returns the pointer to the allocated memory. For example:
+Provided in `stdlib.h`. This functions allocates the memory and returns the pointer to the allocated memory. For example:
 ```c
 int *ptr = (int*) malloc(10 * sizeof(int));
 ```
@@ -21,7 +21,7 @@ This function also allocates memory on heap like `malloc` does. The only differe
 
 ## realloc()
 
-This function changes the size of memory block on heap and returns a pointer to the ne block of memory. It allows to make the change witout loosing the content. However, one needs to be extremly careful with `realloc` so not to create dangling pointers. See example below:
+This function changes the size of memory block on heap and returns a pointer to the new block of memory. It allows to make the change witout loosing the content. However, one needs to be extremly careful with `realloc` so not to create dangling pointers. See example below:
 ```c
 int *ptr1 = (int*) malloc(5 * sizeof(int));
 int *ptr2 = ptr1;
@@ -42,7 +42,7 @@ The following is true for `realloc`:
 
 ## free()
 
-This function frees the memory on the heap, pointed to by a pointer. The following is true for `free`:
+Provided in `stdlib.h`. This function frees the memory on the heap, pointed to by a pointer. The following is true for `free`:
 
 * Passed pointer param must be pointing to a memory which is allocated using `malloc`, `calloc` or `realloc`.
 * If function is called on a memory which is not on heap or on a dangling pointer, then the behavior is undefined.
