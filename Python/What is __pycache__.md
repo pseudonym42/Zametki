@@ -1,7 +1,3 @@
----
-title: What is __pycache__ in Python?
----
-
 # What is \_\_pycache\_\_ in Python?
 
 --- 
