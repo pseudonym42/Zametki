@@ -64,7 +64,6 @@ The shell has the concept of "foreground" jobs and "background" jobs. Foreground
 jobs are processes without control of the terminal. The background jobs might or might not belong to the same process group as the foreground jobs.
 
 
-
 ## fork(), exec() and clone()
 
 Let's look at exec first, when you run:
@@ -84,12 +83,7 @@ run directly without fork, e.g.:
     ENVIRONMENT=$(some complex task)
     exec command
 
-This script does some stuff to prepare the environment so that it contains what is needed. Once that's done, the sh instance is no longer necessary,
-and so it's a (minor) optimization to simply replace the sh instance with the command process, rather than have sh run it as a child process. So
-basically what exec does is - exec replaces the current program in the current process, without forking a new process. As you can see from the above
-example exec is normally used after the environment is created, but what if you just want to copy the environment of the parent process? Well as
-this is required in 90% of the cases - the fork system call was implemented. That is why most of the time fork is being used and you rarely need
-to use exec.
+This script does some stuff to prepare the environment so that it contains what is needed. Once that's done, the sh instance is no longer necessary, and so it's a (minor) optimization to simply replace the sh instance with the command process, rather than have sh run it as a child process. So basically what `exec` does is - it replaces the current program in the current process, without forking a new process. As you can see from the above example `exec` is normally used after the environment is created, but what if you just want to copy the environment of the parent process? Well as this is required in 90% of the cases - the `fork` system call was implemented. That is why most of the time `fork` is being used and you rarely need to use `exec`.
 So fork() creates a new child process, which is a complete copy of the parent process, but child process will have it’s own unique process ID and
 have it’s own address space and memory.
 
@@ -110,6 +104,6 @@ Some of the applications in which forking is used are: telnetd, Apache2, httpd, 
     - All threads within a process share the same address space.
     - Threads reduce overhead by sharing fundamental parts.
     - Threads are more effective in memory management because they uses the same memory block of the parent instead of creating new.
-    - If properly designed and implemented threads give you more speed because there aint any process level context switching in a multi threaded application.
+    - If properly designed and implemented threads give you more speed because there is no any process level context switching in a multi threaded application.
     - Threads are really fast to start and terminate.
 Some of the applications in which forking is used are: MySQL, Firebird
