@@ -4,9 +4,11 @@
 
 The following link can help us understand the difference between pointer and array [Pointer vs Array](http://www.c-faq.com/aryptr/practdiff.html):
 
-> An array is a single, preallocated chunk of contiguous elements (all of the same type), fixed in size and location
-> 
-> A pointer is assigned to point to space allocated elsewhere and it can be reassigned. A pointer is a much more general data structure.
+> An array is a single, pre-allocated chunk of contiguous elements (all of the same type),
+fixed in size and location
+
+> A pointer is assigned to point to space allocated elsewhere and it can be reassigned. A pointer
+is a much more general data structure.
 
 Note that pointer that doesn't point to any object is called null pointer.
 
@@ -20,7 +22,7 @@ A major source of confusion is the fact that name of an array is often implicitl
 
 Ok, now let's consider this example:
 ```c
-int a[7]; 
+int a[7];
 ```
 `a` contains space for seven integers, and you can put a value in one of them with an assignment, like this:
 ```c
@@ -36,7 +38,7 @@ int *p;
 p = &a[0];
 ```
 
-Array dereferencing operator in C, `[ ]`, is defined in terms of pointers. `x[y]` means: start with the pointer `x`, step `y` elements forward after what the pointer points to, and then take whatever is there. Using pointer arithmetic syntax, `x[y]` can also be written as `*(x+y)`
+Array de-referencing operator in C, `[ ]`, is defined in terms of pointers. `x[y]` means: start with the pointer `x`, step `y` elements forward after what the pointer points to, and then take whatever is there. Using pointer arithmetic syntax, `x[y]` can also be written as `*(x+y)`
 
 For this to work with a normal array, such as our `a`, the name `a` in `a[3]` must first be converted to a pointer (to the first element in `a`). Then we step 3 elements forward, and take whatever is there. In other words: take the element at position 3 in the array. (Which is the fourth element in the array, since the first one is numbered 0)
 
@@ -45,7 +47,7 @@ What can be confusing is that you can also write this:
 ```c
 p = a;
 ```
-This does not copy the contents of the array a into the pointer p (whatever that would mean). Instead, the array name a is converted to a pointer to its first element. So that assignment does the same as the previous one.
+This does not copy the contents of the array `a` into the pointer `p` (whatever that would mean). Instead, the array name `a` is converted to a pointer to its first element. So that assignment does the same as the previous one.
 
 Now you can use p in a similar way to an array:
 ```c
