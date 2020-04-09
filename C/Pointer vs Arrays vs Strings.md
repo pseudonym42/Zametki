@@ -26,7 +26,17 @@ int a[7];
 ```
 `a` contains space for seven integers, and you can put a value in one of them with an assignment, like this:
 ```c
-a[3] = 9;
+a[0] = 9;
+a[1] = 5;
+a[2] = 11;
+a[3] = 42;
+```
+Now if you run the following you can see how array is "treated":
+```c
+printf("%d\n", a);      // <address>
+printf("%d\n", &a[0]);  // <address>
+printf("%d\n", a[0]);   // 9
+printf("%d\n", *a);     // 9
 ```
 Now let's look at a pointer:
 ```c

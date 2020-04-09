@@ -1,8 +1,8 @@
-# How Django deals with DB connections? 
+# How Django deals with DB connections?
 
 ---
 
-Nowadays each request that comes through web server (e.g. Apache) and a WSGI server to some django controller works like this (even though this setup can be chaged in the web server and WSGI server config files):
+Nowadays each request that comes through web server (e.g. Apache) and a WSGI server to some django controller works like this (even though this setup can be changed in the web server and WSGI server config files):
 
 * a new process is created by a web server for a connection and is kept alive, because of HTTP 1.1 when Keep-Alive was set to 1 min by default
 * this process initiates a WSGI server, which can run one or multiple processes each with its own threads (* see note below)
@@ -17,6 +17,9 @@ Django automatically opens a connection to the database whenever it needs one an
 Imagine you have these 2 endpoints and callable that can be used by both main controller and the Ajax controller:
 
 ```python
+import functools
+
+
 @functools.lru_cache(maxsize=2)
 def get_latest_data(params):
     # ...
