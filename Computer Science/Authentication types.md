@@ -10,9 +10,9 @@ In the above example the algorithm is just a string identifying it e.g. “SHA25
 
 When user is logging in the password and user_id are submitted. Note that in the basic authentication this data is absolutely unprotected, so HTTPS must be used to protect it from man-in-the-middle attacks. The data is submitted over HTTPS in the POST request body. The body is encrypted. The data should be represented as shown below (this is specified in RFC 7617):
 
-	Authorization: Basic <credentials>,
+	Authorization: Basic <credentials>
 
-where `credentials` is the base64 encoding of user_id and password joined by a single colon (:), for example user_id `some_user@gmail.com` and password `super123pass` would get converted like:
+where `<credentials>` is the base64 encoding of user_id and password joined by a single colon (:), for example user_id `some_user@gmail.com` and password `super123pass` would get converted like:
 
     some_user@gmail.com:super123pass
 
