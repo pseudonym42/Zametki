@@ -7,6 +7,7 @@ Objects are "collections" of properties. A property can reference an object or a
 Primitives are values, they have no properties.
 
 In JS there are 5 primitive types:
+
 * undefined
 * null
 * boolean
